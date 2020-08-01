@@ -1,0 +1,43 @@
+<h1 class="animated fadeIn fast l-blank">Carrito de compras</h1>
+<div *ngIf="productosCarrito.length>0; else elseBlock">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="container ">
+
+
+                <div class="row">
+                    <div class="col">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Precio</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let producto of productosCarrito">
+                                    <td>{{ producto.nombre }}</td>
+                                    <td>${{ producto.precio}}</td>
+                                    <td>{{ producto.cantidad}}</td>
+                                    <td>${{ producto.cantidad*producto.precio}}</td>
+                                    <td><button type="button" (click)="addCarrito(producto)" class="btn btn-outline-primary btn-sm">
+                                                        <i class="fa fa-plus"></i> </button> &nbsp; <button type="button" (click)="elimiarDelCarrito(producto)" class="btn btn-outline-warning btn-sm"><i class="fa fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <img src="/assets/image/empty.png" class="d-inline-block align-top " alt=" " loading="lazy ">
+</ng-template>
