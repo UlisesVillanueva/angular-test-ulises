@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Producto, Carrito } from '../Models/producto.model';
+import { Producto } from '../Models/producto.model';
 
 
 @Injectable({
@@ -11,16 +11,15 @@ export class ProductosService {
 
   // productos$:Observable<Producto[]>;
   productos:Producto[]=[
-    { "nombre": "chocolate", "precio": 30, "cantidad": 1 },
-    { "nombre": "azucar", "precio": 20, "cantidad": 100 },
-    { "nombre": "café", "precio": 40, "cantidad": 100 },
-    { "nombre": "coca-cola", "precio": 12, "cantidad": 100 },
-    { "nombre": "jugo", "precio": 15, "cantidad": 100 },
-    { "nombre": "piña", "precio": 20, "cantidad": 100 },
-    { "nombre": "fresa", "precio": 40, "cantidad": 100 },
-    { "nombre": "mango", "precio": 12, "cantidad": 100 },
-    { "nombre": "pera", "precio": 15, "cantidad": 100 },
-    { "nombre": "patatas ", "precio": 15, "cantidad": 100 }
+    { "nombre": "Chocolate", "precio": 30, "cantidad": 10 },
+    { "nombre": "Azucar", "precio": 22, "cantidad": 5 },
+    { "nombre": "Café", "precio": 40, "cantidad": 20 },
+    { "nombre": "Coca-cola", "precio": 12, "cantidad": 100 },
+    { "nombre": "Jugo", "precio": 15, "cantidad": 100 },
+    { "nombre": "Piña", "precio": 20, "cantidad": 100 },
+    { "nombre": "Fresa", "precio": 40, "cantidad": 100 },
+    { "nombre": "Mango", "precio": 12, "cantidad": 100 },
+    { "nombre": "Pera", "precio": 15, "cantidad": 100 },
    ];
 
    carrito:Producto[]=[];
@@ -41,8 +40,6 @@ export class ProductosService {
   getCarrito(){
     return this.carrito;
   }
-
-
 
   //  addProducto(producto:Producto):Observable<any>{
   //   console.log(producto)

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import { ProductosService } from '../../services/productos.service';
-import { Subscription, of } from 'rxjs';
-import { InventarioService } from '../../services/inventario.service';
-import { Producto } from '../../Models/producto.model';
-import { provideRoutes } from '@angular/router';
 import Swal from 'sweetalert2'
+
+import { ProductosService } from '../../services/productos.service';
+import { Producto } from '../../Models/producto.model';
+
 @Component({
   selector: 'app-agregar-producto',
   templateUrl: './agregar-producto.component.html',
@@ -18,14 +17,14 @@ export class AgregarProductoComponent implements OnInit {
   public formSubmited= false;
   public existeProducto=false;
 
-  private productosSubs:Subscription;
+
   public productos:Producto[]=[];
  
 
   public productoForm= this.fb.group({
-    nombre:['',[Validators.required, Validators.minLength(4)]],
+    nombre:['',[Validators.required, Validators.minLength(3)]],
     precio:['',[Validators.required]],
-    cantidad:['',[Validators.required, Validators.minLength(7)]],
+    cantidad:['',[Validators.required]],
   });
   
   constructor(private productoservice:ProductosService,private fb:FormBuilder) {}

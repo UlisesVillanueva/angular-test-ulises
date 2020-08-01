@@ -4,9 +4,3 @@ export interface Producto{
   precio:number;
 };
 
-
-export interface Carrito{
-  nombre:string;
-  agregados:number;
-  precio:number;
-};
