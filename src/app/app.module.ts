@@ -3,18 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
 import { MatInputModule, } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
-// import {MatTableModule} from '@angular/material/table'
-// import { MatButtonModule } from '@angular/material/button';
-
-
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
 import { ProductosService } from './services/productos.service';
 
+import { AppComponent } from './app.component';
 import { CarritoComponent } from './pages/carrito/carrito.component';
 import { NavbarComponent } from './pages/shared/navbar/navbar.component';
 import { Error404Component } from './pages/error404/error404.component';
@@ -35,7 +30,6 @@ import { AgregarProductoComponent } from './pages/agregar-producto/agregar-produ
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
- 
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
